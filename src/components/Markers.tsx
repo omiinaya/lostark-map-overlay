@@ -113,7 +113,6 @@ const Icon = (icon: string, size: PointExpression, label: string, iconType: stri
     return divIcon({
         className: 'map-marker-' + iconType,
         iconSize: size,
-        html: `<img src="https://lostarkmap.s3.us-west-1.amazonaws.com/map/assets/${icon}.png"/>
-                <div>${label}</div>`
+        html: `<img alt=${label} title=${label} src="https://lostarkmap.s3.us-west-1.amazonaws.com/map/assets/${icon}.png" />`
     });
 }

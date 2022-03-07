@@ -1,22 +1,19 @@
-# Lost Ark Map
+# Lostark Map Overlay
 
-This is an interactive map as overlay to search faster everything.
+This is a resizable interactive map overlay which can be moved and kept up during gameplay.
 
 ### How to use
 
-- Open the App
-- Use the bind Ctrl + H to Show/Hide the map
-- Right click to go back to the previews map.
-- Ctrl + W will close the App.
+- Open the App.
+- Use the Ctrl + H to Show/Hide the map.
+- Search zone to quickly find the zone you're in.
+- Press back or right click to return to the main map.
+- Ctrl + W or Tray icon > Exit to close the App.
 
-### Resources
+### Credits
 
-- All assets used from https://papunika.com/map/?z=overworld&l=us
+- Map data/assets by: https://papunika.com/map/?z=overworld&l=us
 
-
-### About it
-
-- React
-- Redux ToolKit
-- Electron.js
-- Electron Forge
+### Upcoming 
+- Automatic Zone Detection using OCR.
+- Traveling Merchant data.

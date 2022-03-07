@@ -4,7 +4,6 @@ import { TileLayer, useMap } from "react-leaflet";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { closeZone, selectZone } from "../store/slices/Zone";
 import Markers from "./Markers";
-import Back from "./Back";
 
 export default () => {
 
@@ -28,7 +27,7 @@ export default () => {
 
     return (
         <Fragment>
-            <Back/>
+            
             <TileLayer
                 url={`https://lostarkmap.s3.us-west-1.amazonaws.com/map/tiles/zones/${zone.id}/{z}_{x}_{y}.png`}
                 noWrap={true}

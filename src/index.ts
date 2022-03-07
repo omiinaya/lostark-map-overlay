@@ -23,6 +23,7 @@ const createWindow = (): void => {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
+      webSecurity: false
     },
     fullscreenable: true,
     autoHideMenuBar: true,

@@ -125,4 +125,5 @@
 
 .leaflet-touch .leaflet-control-layers {
     border: 1px solid rgb(243, 170, 87);
+    display: none;
 }

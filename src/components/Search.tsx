@@ -2,7 +2,7 @@ import Fuse from "fuse.js";
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import { useAppSelector, useAppDispatch } from "../store/hooks";
 import { selectWorld } from "../store/slices/World";
-import { selectZone } from "../store/slices/Zone";
+import { selectZone, closeZone } from "../store/slices/Zone";
 import { IWorldZone } from "../interfaces/IWorld";
 import { getWorld } from "../api/World";
 import { getZone } from "../api/Zone";
@@ -49,9 +49,13 @@ export default () => {
     updateQuery(e.currentTarget.value);
   };
 
-  const onFocus = (e: any) => {
+  const onFocus = () => {
     setIsComponentVisible(true);
   };
+
+  const onBack = () => {
+    dispatch(closeZone());
+  }
 
   function getZ(zones: Array<IWorldZone>, name: string) {
     return zones.filter((zone) => zone.name === name)[0];
@@ -72,7 +76,7 @@ export default () => {
 
   return (
     <Fragment>
-      {zone === null && (
+      {zone === null ? (
         <div ref={ref} className="search-form">
           <input
             type="text"
@@ -107,6 +111,10 @@ export default () => {
               })}
             </div>
           )}
+        </div>
+      ) : (
+        <div className="search-form" id="search-form">
+          <div className="back" onClick={onBack}/>
         </div>
       )}
     </Fragment>

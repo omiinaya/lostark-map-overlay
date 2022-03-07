@@ -1,8 +1,8 @@
 {
-  "name": "lostarkmap",
-  "productName": "lostarkmap",
+  "name": "lostarkmapoverlay",
+  "productName": "lostarkmapoverlay",
   "version": "1.0.0",
-  "description": "Lost Ark interactive map",
+  "description": "Lostark Map Overlay",
   "main": ".webpack/main",
   "scripts": {
     "start": "set ELECTRON_DISABLE_SECURITY_WARNINGS=true && set NODE_ENV=development && electron-forge start",
@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": {
-    "name": "Cahos Gaming Corp"
+    "name": "omiinaya"
   },
   "license": "MIT",
   "config": {
@@ -27,8 +27,8 @@
           ],
           "config": {
             "repository": {
-              "owner": "alejodaraio",
-              "name": "lost-ark-map"
+              "owner": "omiinaya",
+              "name": "lostark-map-overlay"
             }
           }
         }
@@ -37,10 +37,10 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "LostArkMap",
+            "name": "LostarkMapOverlay",
             "loadingGif": "src/assets/splash.png",
             "setupIcon": "src/assets/favicon.ico",
-            "setupExe": "LostArkMap.exe"
+            "setupExe": "LostarkMapOverlay.exe"
           }
         },
         {

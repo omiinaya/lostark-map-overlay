@@ -57,7 +57,7 @@ body {
 
 .search-form input:focus {
   width: 300px;
-  padding-left: 60px;
+  padding-left: 50px;
 }
 
 .search-form input:not(:focus) {
@@ -81,15 +81,10 @@ body {
   background: rgb(35, 41, 46);
 }
 
+.leaflet-control-layers {
+  display: none;
+}
 
-.watermark {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  background-image: url("https://lostarkmap.s3.us-west-1.amazonaws.com/map/assets/logo.webp");
-  width: 100px;
-  height: 100px;
-  z-index: 999;
-  background-size: 100px;
-  opacity: 0.3;
+.leaflet-control-attribution {
+  display: none !important;
 }
