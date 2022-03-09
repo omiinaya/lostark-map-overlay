@@ -15,8 +15,7 @@ This is a resizable interactive map overlay which can be moved and kept up durin
 
 ### Credits
 
-- Map data by: https://papunika.com/map/?z=overworld&l=us
-- Map assets by: https://github.com/alejodaraio
+- Map assets by: https://papunika.com/map/?z=overworld&l=us
 
 ### Upcoming 
 - More addons TBD.
