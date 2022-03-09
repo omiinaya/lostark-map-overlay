@@ -4,7 +4,7 @@ This is a resizable interactive map overlay which can be moved and kept up durin
 
 ### Demo
 
-![demo gif](https://media.giphy.com/media/1PeWaCfWyTZAZ7V3QF/giphy.gif)
+![demo gif](https://github.com/omiinaya/lostark-map-overlay/blob/master/demo.gif)
 
 ### How to use
 
