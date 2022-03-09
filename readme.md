@@ -2,6 +2,10 @@
 
 This is a resizable interactive map overlay which can be moved and kept up during gameplay.
 
+### Demo
+
+![demo gif](https://media.giphy.com/media/1PeWaCfWyTZAZ7V3QF/giphy.gif)
+
 ### How to use
 
 - Open the App.
