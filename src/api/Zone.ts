@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { IWorldZone } from "../interfaces/IWorld";
 
 export const getZone = createAsyncThunk('zone/getZone', async (zone: IWorldZone) => {
-    return await fetch(`https://papunika.com/map/data/zones/us/${zone.id}.json`)
+    return await fetch(`https://lostarkmap.s3.us-west-1.amazonaws.com/map/data/zones/us/${zone.id}.json`)
         .then(response => response.json())
         .then(response => {
             return {

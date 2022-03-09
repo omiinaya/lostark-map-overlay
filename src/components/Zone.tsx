@@ -27,7 +27,6 @@ export default () => {
 
     return (
         <Fragment>
-            
             <TileLayer
                 url={`https://lostarkmap.s3.us-west-1.amazonaws.com/map/tiles/zones/${zone.id}/{z}_{x}_{y}.png`}
                 noWrap={true}

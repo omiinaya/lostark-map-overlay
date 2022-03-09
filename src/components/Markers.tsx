@@ -1,4 +1,4 @@
-import { divIcon, LatLng, PointExpression } from "leaflet";
+import { divIcon, LatLng } from "leaflet";
 import React from "react";
 import { LayerGroup, LayersControl, Marker } from "react-leaflet";
 import IMarker, { IMarkerData } from "../interfaces/IMarker";
@@ -57,6 +57,7 @@ const allowedMarkers = (marker: string) => {
     "Viewpoint",
     "Resonance",
     "FBoss",
+    "Portal"
   ];
 
   return markers.includes(marker);
@@ -81,6 +82,7 @@ const markerTitle = (markerType: string) => {
     Viewpoint: "Vista",
     Resonance: "Resonance",
     FBoss: "Boss",
+    Portal: "Portal"
   };
 
   return markers[markerType];
@@ -122,18 +124,28 @@ const MarkerIcon = (marker: IMarker, data: IMarkerData) => {
       return Icon("resonance", [18, 18], data.popupTitle);
     case "FBoss":
       return Icon("boss", [18, 18], data.popupTitle);
+    case "Portal":
+      return Icon("portal", [40, 40], data.tooltip);
   }
 };
 
 const Icon = (
   icon: string,
-  size: PointExpression,
+  size: any,
   label: string,
   iconType = "icon"
 ) => {
-  return divIcon({
-    className: "map-marker-" + iconType,
-    iconSize: size,
-    html: `<img alt='${label}' title='${label}' src="https://lostarkmap.s3.us-west-1.amazonaws.com/map/assets/${icon}.png" />`,
-  });
+  if (icon != "portal") {
+    return divIcon({
+      className: "map-marker-" + iconType,
+      iconSize: size,
+      html: `<img alt='${label}' title='${label}' src="https://lostarkmap.s3.us-west-1.amazonaws.com/map/assets/${icon}.png" />`,
+    });
+  } else {
+    return divIcon({
+      className: "map-marker-" + iconType,
+      iconSize: size,
+      html: `<img alt='${label}' title='${label}' src="https://omiinaya.sirv.com/Images/la_map/black_outline_blue_arrow.png" width='${size[0]}' height='${size[1]}'/>`,
+    });
+  }
 };
