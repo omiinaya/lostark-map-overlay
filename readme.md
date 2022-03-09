@@ -2,12 +2,12 @@
 
 This is a resizable interactive map overlay which can be moved and kept up during gameplay.
 
-### Demo
-
 ![demo gif](https://github.com/omiinaya/lostark-map-overlay/blob/master/demo.gif)
 
 ### How to use
 
+- Download and install the app from [here.](https://github.com/omiinaya/lostark-map-overlay/releases/download/Release/LAMapOverlaySetup.exe)
+- Run the shortcut in your desktop.
 - Ctrl + H to show/hide the map.
 - Click the search icon to begin searching for a zone.
 - Press back or right click to return to the main map.
@@ -19,5 +19,4 @@ This is a resizable interactive map overlay which can be moved and kept up durin
 - Map assets by: https://github.com/alejodaraio
 
 ### Upcoming 
-- Automatic Zone Detection using OCR.
-- Traveling Merchant.
+- More addons TBD.
