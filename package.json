@@ -1,8 +1,8 @@
 {
   "name": "lostarkmapoverlay",
-  "productName": "lostarkmapoverlay",
+  "productName": "LostarkMapOverlay",
   "version": "1.0.0",
-  "description": "Lostark Map Overlay",
+  "description": "LostarkMapOverlay",
   "main": ".webpack/main",
   "scripts": {
     "start": "set ELECTRON_DISABLE_SECURITY_WARNINGS=true && set NODE_ENV=development && electron-forge start",
@@ -18,7 +18,13 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "electronPackagerConfig": {
+        "icon": "src/assets/favicon.ico",
+        "asar": true
+      },
+      "packagerConfig": {
+        "icon": "src/assets/favicon.ico"
+      },
       "publishers": [
         {
           "name": "@electron-forge/publisher-github",
@@ -40,7 +46,7 @@
             "name": "LostarkMapOverlay",
             "loadingGif": "src/assets/splash.png",
             "setupIcon": "src/assets/favicon.ico",
-            "setupExe": "LostarkMapOverlay.exe"
+            "setupExe": "LAMapOverlaySetup.exe"
           }
         },
         {

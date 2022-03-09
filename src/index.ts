@@ -20,6 +20,7 @@ const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     title: "Lost Ark Map",
+    icon: path.join(__dirname, 'assets', 'favicon.ico'),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
