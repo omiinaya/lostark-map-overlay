@@ -1,6 +1,6 @@
 # Lostark Map Overlay
 
-This is a resizable interactive map overlay which can be used to help you find secrets hidden around the world with minimal hassle.
+This is an interactive map overlay which is resizable, movable and can be kept up during gameplay for finding secrets hidden around the world of Lost Ark.
 
 ![demo gif](https://github.com/omiinaya/lostark-map-overlay/blob/master/demo.gif)
 
