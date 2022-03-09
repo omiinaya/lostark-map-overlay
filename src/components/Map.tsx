@@ -6,8 +6,8 @@ import Search from "./Search";
 import { Rnd } from "react-rnd";
 
 export default () => {
-    return (
-        <div>
+  return (
+    <div>
       <Rnd
         style={{
           display: "flex",
@@ -50,5 +50,5 @@ export default () => {
         </div>
       </Rnd>
     </div>
-    )
+  )
 }

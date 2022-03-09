@@ -131,7 +131,6 @@ const Icon = (
   label: string,
   iconType = "icon"
 ) => {
-    console.log(label)
   return divIcon({
     className: "map-marker-" + iconType,
     iconSize: size,
