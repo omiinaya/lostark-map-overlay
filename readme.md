@@ -16,7 +16,7 @@ This is an interactive map overlay which is resizable, movable and can be kept u
 - Map assets by: https://papunika.com/map/?z=overworld&l=us
 
 ### Disclaimer
-- This app is completely external to the game and does not read or write memory in any way shape or form. I am using it on my main and I haven't ran any issues so far. However, you use at your own risk.
+- This app is completely external to the game and does not read or write memory in any way shape or form. However, you use at your own risk.
 
 ### Upcoming 
 - More addons TBD.
