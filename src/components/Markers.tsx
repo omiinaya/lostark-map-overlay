@@ -2,8 +2,13 @@ import { divIcon, LatLng } from "leaflet";
 import React from "react";
 import { LayerGroup, LayersControl, Marker } from "react-leaflet";
 import IMarker, { IMarkerData } from "../interfaces/IMarker";
+import { useAppDispatch } from "../store/hooks";
+import { getZone } from "../api/Zone";
+import { getWorld } from "../api/World";
+import { selectZone, closeZone } from "../store/slices/Zone";
 
 export default (markers: Array<IMarker>) => {
+  const dispatch = useAppDispatch();
   return (
     <LayersControl position="topright">
       {Object.keys(markers).map((key, index) => {
@@ -21,11 +26,34 @@ export default (markers: Array<IMarker>) => {
                     data.coordinates[0],
                     data.coordinates[1]
                   );
+                  const icon = MarkerIcon(marker, data);
                   return (
                     <Marker
                       key={data.id + data.popupTitle}
-                      icon={MarkerIcon(marker, data)}
+                      icon={icon}
                       position={position}
+                      eventHandlers={{
+                        click: () => {
+                          if (data.destinationID) {
+                            let destination: any;
+                            if (data.destinationID === "overworld") {
+                              destination = "00000";
+                              dispatch(closeZone());
+                            } else {
+                              destination = data.destinationID;
+
+                              dispatch(getWorld()).then((data) => {
+                                const zones: any = data.payload.zones;
+                                const zone: any = zones.filter(
+                                  (z: any) => z.id === destination
+                                )[0];
+                                dispatch(closeZone());
+                                dispatch(getZone(zone));
+                              });
+                            }
+                          }
+                        },
+                      }}
                     />
                   );
                 })}
@@ -57,7 +85,7 @@ const allowedMarkers = (marker: string) => {
     "Viewpoint",
     "Resonance",
     "FBoss",
-    "Portal"
+    "Portal",
   ];
 
   return markers.includes(marker);
@@ -82,7 +110,7 @@ const markerTitle = (markerType: string) => {
     Viewpoint: "Vista",
     Resonance: "Resonance",
     FBoss: "Boss",
-    Portal: "Portal"
+    Portal: "Portal",
   };
 
   return markers[markerType];
@@ -129,12 +157,7 @@ const MarkerIcon = (marker: IMarker, data: IMarkerData) => {
   }
 };
 
-const Icon = (
-  icon: string,
-  size: any,
-  label: string,
-  iconType = "icon"
-) => {
+const Icon = (icon: string, size: any, label: string, iconType = "icon") => {
   if (icon != "portal") {
     return divIcon({
       className: "map-marker-" + iconType,

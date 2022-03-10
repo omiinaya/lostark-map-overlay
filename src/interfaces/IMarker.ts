@@ -7,6 +7,7 @@ export default interface IMarker {
 }
 
 export interface IMarkerData {
+    destinationID: string
     coordinates: Array<number>
     id: string
     popupTitle: string
