@@ -10,7 +10,7 @@ This is an interactive map overlay which is resizable, movable and can be kept u
 - Ctrl + H to show/hide the map.
 - Click the search icon to begin searching for a zone.
 - Press back or right click to return to the main map.
-- Ctrl + W or Tray icon > Exit to close the App.
+- Right click tray icon > Exit to close the App.
 
 ### Credits
 - Map assets by: https://papunika.com/map/?z=overworld&l=us
