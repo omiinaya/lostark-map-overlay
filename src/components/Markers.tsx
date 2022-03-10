@@ -5,7 +5,7 @@ import IMarker, { IMarkerData } from "../interfaces/IMarker";
 import { useAppDispatch } from "../store/hooks";
 import { getZone } from "../api/Zone";
 import { getWorld } from "../api/World";
-import { selectZone, closeZone } from "../store/slices/Zone";
+import { closeZone } from "../store/slices/Zone";
 
 export default (markers: Array<IMarker>) => {
   const dispatch = useAppDispatch();
@@ -33,23 +33,18 @@ export default (markers: Array<IMarker>) => {
                       icon={icon}
                       position={position}
                       eventHandlers={{
-                        click: () => {
+                        click: async () => {
                           if (data.destinationID) {
                             let destination: any;
                             if (data.destinationID === "overworld") {
-                              destination = "00000";
-                              dispatch(closeZone());
+                              dispatch(closeZone())
                             } else {
                               destination = data.destinationID;
-
-                              dispatch(getWorld()).then((data) => {
-                                const zones: any = data.payload.zones;
-                                const zone: any = zones.filter(
-                                  (z: any) => z.id === destination
-                                )[0];
-                                dispatch(closeZone());
-                                dispatch(getZone(zone));
-                              });
+                              const world = await dispatch(getWorld())
+                              const zones = world.payload.zones;
+                              const zone = zones.filter((z:any) => z.id === destination)[0];
+                              dispatch(closeZone())
+                              setTimeout(() => { dispatch(getZone(zone)); }, 500);
                             }
                           }
                         },

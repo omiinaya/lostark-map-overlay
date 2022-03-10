@@ -17,7 +17,7 @@ export const worldSlice = createSlice({
   name: 'zone',
   initialState,
   reducers: {
-    closeZone: (state) => {
+  closeZone: (state) => {
       state.zone = null;
     }
   },
