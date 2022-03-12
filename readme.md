@@ -5,7 +5,7 @@ This is an interactive map overlay which is resizable, movable and can be kept u
 ![demo gif](https://github.com/omiinaya/lostark-map-overlay/blob/master/demo.gif)
 
 ### How to use
-- Download and install the app from [here.](https://github.com/omiinaya/lostark-map-overlay/releases/download/Release/LAMapOverlaySetup.exe)
+- Download and install the app from [here.](https://github.com/omiinaya/lostark-map-overlay/releases/download/v1.0.1/LAMapOverlaySetup.exe)
 - Run the shortcut in your desktop.
 - Ctrl + H to show/hide the map.
 - Click the search icon to begin searching for a zone.
