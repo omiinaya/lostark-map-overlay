@@ -23,13 +23,14 @@ export default () => {
       return { name: zone.name, location: zone.location };
     });
 
-    const worldMarkerList = world.markers.map((marker) => {
-      return marker.data.map((data) => {
-        return { name: data.popupTitle, location: data.coordinates };
-      });
-    });
+    const worldMarkerList = world.markers.flatMap((marker) =>
+      marker.data.map((data) => ({
+        name: data.popupTitle,
+        location: data.coordinates,
+      }))
+    );
 
-    const list = [...worldList, ...worldMarkerList[0]];
+    const list = [...worldList, ...worldMarkerList];
 
     const search = new Fuse(list, {
       includeScore: true,
@@ -37,9 +38,7 @@ export default () => {
       keys: ["name"],
     });
 
-    let results = search.search("");
-    characterResults = results.map((result) => result.item);
-    results = search.search(query, { limit: 10 });
+    const results = search.search(query, { limit: 10 });
     characterResults = query
       ? results.map((character) => character.item)
       : null;

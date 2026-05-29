@@ -9,5 +9,5 @@ export const getWorld = createAsyncThunk('world/getWorld', async () => {
     ).then(([world, zone]) => {
         world.markers = zone.markers;
         return world;
-    })
-})
+    });
+});
