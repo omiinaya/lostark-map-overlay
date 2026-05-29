@@ -91,6 +91,8 @@ export default () => {
                 return (
                   <div
                     key={`searchResult${index}`}
+                    role="button"
+                    tabIndex={0}
                     onClick={() => {
                       dispatch(getWorld()).then((data) => {
                         const zones = data.payload.zones;
@@ -103,6 +105,21 @@ export default () => {
                           ) as HTMLInputElement
                         ).value = "";
                       });
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        dispatch(getWorld()).then((data) => {
+                          const zones = data.payload.zones;
+                          const zone = getZ(zones, result.name);
+                          dispatch(getZone(zone));
+                          updateQuery("");
+                          (
+                            document.querySelector(
+                              "#search-input"
+                            ) as HTMLInputElement
+                          ).value = "";
+                        });
+                      }
                     }}
                   >
                     {result.name}
