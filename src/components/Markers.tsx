@@ -153,7 +153,7 @@ const MarkerIcon = (marker: IMarker, data: IMarkerData) => {
 };
 
 const Icon = (icon: string, size: any, label: string, iconType = "icon") => {
-  if (icon != "portal") {
+  if (icon !== "portal") {
     return divIcon({
       className: "map-marker-" + iconType,
       iconSize: size,
