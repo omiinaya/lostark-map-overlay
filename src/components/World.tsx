@@ -33,7 +33,7 @@ export default () => {
         return <Fragment>
             {Object.keys(worldZone).map((key, index) => {
                 const zone = worldZone[index];
-                if (zone.isDungeon == 0 && zone.location) {
+                if (zone.isDungeon === 0 && zone.location) {
                     const position = new LatLng(zone.location[0], zone.location[1]);
                     return <Marker
                         icon={ZoneIcon(zone)}
