@@ -130,7 +130,7 @@ export default () => {
         </div>
       ) : (
         <div className="search-form" id="search-form">
-          <div className="back" onClick={onBack}/>
+          <div className="back" role="button" tabIndex={0} onClick={onBack} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onBack(); }}/>
         </div>
       )}
     </Fragment>
