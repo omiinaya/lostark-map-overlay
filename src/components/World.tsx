@@ -76,6 +76,13 @@ export default () => {
                     html: `<img src="https://lostarkmap.s3.us-west-1.amazonaws.com/map/assets/islandPvP.png"/>
                               <div>${zone.name}</div>`
                 });
+            default:
+                return divIcon({
+                    className: 'map-marker-zone',
+                    iconSize: [60, 60],
+                    html: `<img src="https://lostarkmap.s3.us-west-1.amazonaws.com/map/zones/${zone.id}.png"/>
+                          <div>${zone.name}</div>`
+                });
         }
     }
 
